@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h2>Dashboard</h2>
+<button onclick="start()">Start Quiz</button>
+<button onclick="logoutUser()">Logout</button>
+
+<script type="module">
+import { logout, isLoggedIn } from "./js/storage.js";
+
+if(!isLoggedIn()){
+  window.location.href="index.html";
+}
+
+window.start = () => window.location.href="quiz.html";
+
+window.logoutUser = () => {
+  logout();
+  window.location.href="index.html";
+};
+</script>
+</body>
+</html>
